@@ -3,8 +3,8 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Simon Say's</title>
     <link rel="stylesheet" href="css/styles.css">
+    <title>Simon Say's</title>
   </head>
   <body>
     <div class="gameboard">
@@ -24,15 +24,27 @@
       class Juego {
         constructor() {
           this.inicializar()
+          this.generarSecuencia()
         }
 
         inicializar() {
           btnEmpezar.classList.add('hide')
+          this.nivel = 1
+          this.colores = {
+              celeste,
+              violeta,
+              naranja,
+              verde
+          }
+        }
+
+        generarSecuencia(){
+            this.secuencia = new Array(10).fill(0).map(n => (Math.floor(Math.random() * 4)))
         }
       }
 
       function empezarJuego() {
-        var juego = new Juego()
+        window.juego = new Juego()
       }
     </script>
   </body>
